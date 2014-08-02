@@ -96,7 +96,7 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
 - (void)setDropDownTableTitlesArray:(NSArray *)dropDownTableTitlesArray {
     
     if (_dropDownTableTitlesArray != dropDownTableTitlesArray) {
-        _dropDownTableTitlesArray = dropDownTableTitlesArray;
+        _dropDownTableTitlesArray = [dropDownTableTitlesArray copy];
         [self.dropDownTableView reloadData];
     }
 }
@@ -104,7 +104,7 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
 - (void)setDropDownTableSubtitlesArray:(NSArray *)dropDownTableSubtitlesArray {
     
     if (_dropDownTableSubtitlesArray != dropDownTableSubtitlesArray) {
-        _dropDownTableSubtitlesArray = dropDownTableSubtitlesArray;
+        _dropDownTableSubtitlesArray = [dropDownTableSubtitlesArray copy];
         [self.dropDownTableView reloadData];
     }
 }
