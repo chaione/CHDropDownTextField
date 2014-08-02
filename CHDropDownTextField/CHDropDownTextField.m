@@ -23,16 +23,59 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
 
 - (instancetype)init {
     
-    self = [super init];
+    return [self initWithCellClass:[CHDropDownTextFieldTableViewCell class]];
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    
+    self = [super initWithFrame:frame];
     
     if (self) {
-        _canPaste = YES;
+        [self initSetup];
     }
     
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        [self initSetup];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithCellClass:(Class)cellClass {
+    
+    self = [super init];
+    
+    if (self) {
+        [self initSetup];
+        _cellClass = cellClass;
+    }
+    
+    return self;
+}
+
+- (void)initSetup {
+    
+    self.clipsToBounds = NO;
+    _canPaste = YES;
+    _cellClass = [CHDropDownTextFieldTableViewCell class];
+}
+
 #pragma mark - Setters
+
+- (void)setCellClass:(Class)cellClass {
+    
+    if (_cellClass != cellClass) {
+        _cellClass = cellClass;
+        [self.dropDownTableView reloadData];
+    }
+}
 
 - (void)setDropDownTableTitlesArray:(NSArray *)dropDownTableTitlesArray {
     
@@ -65,8 +108,7 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
     if (_dropDownTableView == nil) {
         _dropDownTableView = [[UITableView alloc] init];
         _dropDownTableView.translatesAutoresizingMaskIntoConstraints = NO;
-        [_dropDownTableView registerClass:[CHDropDownTextFieldTableViewCell class] forCellReuseIdentifier:CHDropDownTextFieldTableViewCellIdentifier];
-        _dropDownTableView.scrollEnabled = NO;
+        [_dropDownTableView registerClass:self.cellClass forCellReuseIdentifier:CHDropDownTextFieldTableViewCellIdentifier];
         _dropDownTableView.dataSource = self;
         _dropDownTableView.delegate = self;
         [self layoutDropDownTableView];
@@ -94,13 +136,6 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
     frame.size.width = CGRectGetWidth(self.bounds) - (CHDropDownTableViewSidePadding * 2);
     frame.size.height = self.dropDownTableVisibleRowCount * CHDropDownTextFieldTableViewCellHeight;
     self.dropDownTableView.frame = frame;
-    
-    // Table Shadow
-    self.dropDownTableView.layer.masksToBounds = NO;
-    self.dropDownTableView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.dropDownTableView.layer.shadowOpacity = 0.55f;
-    self.dropDownTableView.layer.shadowOffset = CGSizeMake(0, 7.0f);
-    self.dropDownTableView.layer.shadowRadius = 4.0f;
 }
 
 - (BOOL)becomeFirstResponder {
@@ -161,7 +196,7 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CHDropDownTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CHDropDownTextFieldTableViewCellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CHDropDownTextFieldTableViewCellIdentifier];
     NSString *title = [self.dropDownTableTitlesArray objectAtIndex:indexPath.row];
     cell.textLabel.text = title;
     

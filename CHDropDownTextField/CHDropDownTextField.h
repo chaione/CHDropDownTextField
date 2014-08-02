@@ -16,6 +16,18 @@
 @interface CHDropDownTextField : UITextField
 
 /**
+ Designated initializer.
+ 
+ @param cellClass The class to be used by the internal table view to dequeue cells. Defaults to `CHDropDownTextFieldTableViewCell`.
+ */
+- (instancetype)initWithCellClass:(Class)cellClass;
+
+/**
+ The class to be used by the internal table view to dequeue cells. Defaults to `CHDropDownTextFieldTableViewCell`.
+ */
+@property (nonatomic, assign) Class cellClass;
+
+/**
  Array of strings to be shown as titles in the drop down table.
  */
 @property (nonatomic, copy) NSArray *dropDownTableTitlesArray;
@@ -47,7 +59,7 @@
 /**
  The receiver’s drop-down delegate.
  */
-@property (nonatomic, assign) id<CHDropDownTextFieldDelegate> dropDownDelegate;
+@property (nonatomic, assign) IBOutlet id<CHDropDownTextFieldDelegate> dropDownDelegate;
 
 @end
 
