@@ -44,14 +44,14 @@
 @property (nonatomic, assign) Class cellClass;
 
 /**
- Array of strings to be shown as titles in the drop down table.
+ Array of strings to be shown as titles in the drop down table. Setting this will cause the table view to reload its data.
  */
 @property (nonatomic, copy) NSArray *dropDownTableTitlesArray;
 
 /**
- Array of string to be shown as subtitles in the drop down table.
+ Array of string to be shown as subtitles in the drop down table. Setting this will cause the table view to reload its data.
  
- The number of objects in this array must match the number of objects in the `dropDownTableTitlesArray` array, otherwise subtitle labels will be hidden.
+ The number of objects in this array must match the number of objects in the `dropDownTableTitlesArray` array, otherwise subtitle labels will be hidden in the case of having a cell that supports subtitles.
  
  @see dropDownTableTitlesArray
  */
@@ -69,6 +69,11 @@
 
 /**
  The drop-down table.
+ 
+ @warning Use only for visual customization. To reload the data, re-set `dropDownTableTitlesArray` and `dropDownTableSubtitlesArray` as needed.
+ 
+ @see dropDownTableTitlesArray
+ @see dropDownTableSubtitlesArray
  */
 @property (nonatomic, strong, readonly) UITableView *dropDownTableView;
 
