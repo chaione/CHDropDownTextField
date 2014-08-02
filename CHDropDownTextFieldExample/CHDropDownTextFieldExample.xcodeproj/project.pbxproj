@@ -22,6 +22,7 @@
 		42A5B983198C584E00C3BCC1 /* CHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A5B982198C584E00C3BCC1 /* CHViewController.m */; };
 		42A5B989198C58AF00C3BCC1 /* CHDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A5B986198C58AF00C3BCC1 /* CHDropDownTextField.m */; };
 		42A5B98A198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A5B988198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.m */; };
+		42A5B98C198C692300C3BCC1 /* Main-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A5B98B198C692300C3BCC1 /* Main-iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		42A5B986198C58AF00C3BCC1 /* CHDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDropDownTextField.m; sourceTree = "<group>"; };
 		42A5B987198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDropDownTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		42A5B988198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDropDownTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		42A5B98B198C692300C3BCC1 /* Main-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPhone.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				42A5B984198C58AF00C3BCC1 /* CHDropDownTextField */,
 				42A5B961198C568900C3BCC1 /* CHAppDelegate.h */,
 				42A5B962198C568900C3BCC1 /* CHAppDelegate.m */,
+				42A5B98B198C692300C3BCC1 /* Main-iPhone.storyboard */,
 				42A5B981198C584E00C3BCC1 /* CHViewController.h */,
 				42A5B982198C584E00C3BCC1 /* CHViewController.m */,
 				42A5B964198C568900C3BCC1 /* Images.xcassets */,
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42A5B95D198C568900C3BCC1 /* InfoPlist.strings in Resources */,
+				42A5B98C198C692300C3BCC1 /* Main-iPhone.storyboard in Resources */,
 				42A5B965198C568900C3BCC1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +471,7 @@
 				42A5B97D198C568900C3BCC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42A5B97E198C568900C3BCC1 /* Build configuration list for PBXNativeTarget "CHDropDownTextFieldExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +480,7 @@
 				42A5B980198C568900C3BCC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

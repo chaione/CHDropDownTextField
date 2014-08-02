@@ -11,15 +11,4 @@
 
 @implementation CHAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    CHViewController *viewController = [[CHViewController alloc] init];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = viewController;
-    [self.window makeKeyAndVisible];
-    return YES;
-}
-
 @end
