@@ -1,6 +1,6 @@
 //
 //  CHDropDownTextField.h
-//  DPIM
+//  CHDropDownTextField
 //
 //  Created by Rogelio Gudino on 5/22/14.
 //  Copyright (c) 2014 ChaiOne. All rights reserved.
@@ -11,7 +11,7 @@
 @protocol CHDropDownTextFieldDelegate;
 
 /**
- A DPIM stylized textfield that has a drop-down as an additional input method to the keyboard.
+ A textfield that has a drop-down as an additional input method to the keyboard.
  */
 @interface CHDropDownTextField : UITextField
 

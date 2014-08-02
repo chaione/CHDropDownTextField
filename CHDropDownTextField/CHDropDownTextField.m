@@ -1,6 +1,6 @@
 //
 //  CHDropDownTextField.m
-//  DPIM
+//  CHDropDownTextField
 //
 //  Created by Rogelio Gudino on 5/22/14.
 //  Copyright (c) 2014 ChaiOne. All rights reserved.
@@ -9,9 +9,9 @@
 #import "CHDropDownTextField.h"
 #import "CHDropDownTextFieldTableViewCell.h"
 
-static NSString * const DPIMDropDownTextFieldTableViewCellIdentifier = @"DPIMTextFieldDropDownTableViewCellIdentifier";
-static CGFloat const DPIMDropDownTextFieldTableViewCellHeight = 44.0;
-static CGFloat const DPIMDropDownTableViewSidePadding = 0;
+static NSString * const CHDropDownTextFieldTableViewCellIdentifier = @"CHTextFieldDropDownTableViewCellIdentifier";
+static CGFloat const CHDropDownTextFieldTableViewCellHeight = 44.0;
+static CGFloat const CHDropDownTableViewSidePadding = 0;
 
 @interface CHDropDownTextField () <UITableViewDataSource, UITableViewDelegate>
 
@@ -65,7 +65,7 @@ static CGFloat const DPIMDropDownTableViewSidePadding = 0;
     if (_dropDownTableView == nil) {
         _dropDownTableView = [[UITableView alloc] init];
         _dropDownTableView.translatesAutoresizingMaskIntoConstraints = NO;
-        [_dropDownTableView registerClass:[CHDropDownTextFieldTableViewCell class] forCellReuseIdentifier:DPIMDropDownTextFieldTableViewCellIdentifier];
+        [_dropDownTableView registerClass:[CHDropDownTextFieldTableViewCell class] forCellReuseIdentifier:CHDropDownTextFieldTableViewCellIdentifier];
         _dropDownTableView.scrollEnabled = NO;
         _dropDownTableView.dataSource = self;
         _dropDownTableView.delegate = self;
@@ -89,10 +89,10 @@ static CGFloat const DPIMDropDownTableViewSidePadding = 0;
     // This causes a crash when popping a VC that has this textfield as the first responder.
     // The cheapest way out is to manually layout the drop-down table.
     CGRect frame = CGRectZero;
-    frame.origin.x = DPIMDropDownTableViewSidePadding;
+    frame.origin.x = CHDropDownTableViewSidePadding;
     frame.origin.y = CGRectGetHeight(self.bounds);
-    frame.size.width = CGRectGetWidth(self.bounds) - (DPIMDropDownTableViewSidePadding * 2);
-    frame.size.height = self.dropDownTableVisibleRowCount * DPIMDropDownTextFieldTableViewCellHeight;
+    frame.size.width = CGRectGetWidth(self.bounds) - (CHDropDownTableViewSidePadding * 2);
+    frame.size.height = self.dropDownTableVisibleRowCount * CHDropDownTextFieldTableViewCellHeight;
     self.dropDownTableView.frame = frame;
     
     // Table Shadow
@@ -161,7 +161,7 @@ static CGFloat const DPIMDropDownTableViewSidePadding = 0;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CHDropDownTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DPIMDropDownTextFieldTableViewCellIdentifier];
+    CHDropDownTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CHDropDownTextFieldTableViewCellIdentifier];
     NSString *title = [self.dropDownTableTitlesArray objectAtIndex:indexPath.row];
     cell.textLabel.text = title;
     
