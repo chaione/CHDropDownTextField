@@ -77,6 +77,16 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
+    NSString *finalString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    self.filteredTitlesArray = [self.titlesArray mutableCopy];
+    
+    if (finalString.length != 0) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", finalString];
+        [self.filteredTitlesArray filterUsingPredicate:predicate];
+    }
+    
+    self.dropDownTextField.dropDownTableTitlesArray = self.filteredTitlesArray;
+    
     return YES;
 }
 
