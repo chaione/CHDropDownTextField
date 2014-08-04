@@ -25,7 +25,7 @@
 #import "CHViewController.h"
 #import "CHDropDownTextField.h"
 
-@interface CHViewController () <CHDropDownTextFieldDelegate, UITextFieldDelegate>
+@interface CHViewController () <CHDropDownTextFieldDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) IBOutlet CHDropDownTextField *dropDownTextField;
 @property (nonatomic, strong) NSArray *titlesArray;
@@ -47,6 +47,7 @@
 - (void)setupGestureRecognizer {
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)];
+    tapGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapGestureRecognizer];
 }
 
@@ -73,6 +74,22 @@
     [self.view endEditing:YES];
 }
 
+#pragma mark - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    
+    if ([self.dropDownTextField isFirstResponder]) {
+        CGPoint touchPoint = [touch locationInView:self.dropDownTextField];
+        
+        if (CGRectContainsPoint(self.dropDownTextField.dropDownTableView.frame, touchPoint)) {
+            
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
@@ -94,6 +111,7 @@
 
 - (void)dropDownTextField:(CHDropDownTextField *)dropDownTextField didChooseDropDownOptionAtIndex:(NSUInteger)index {
     
+    self.dropDownTextField.text = self.filteredTitlesArray[index];
 }
 
 @end
