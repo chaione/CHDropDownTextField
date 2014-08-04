@@ -23,6 +23,7 @@
 		42A5B989198C58AF00C3BCC1 /* CHDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A5B986198C58AF00C3BCC1 /* CHDropDownTextField.m */; };
 		42A5B98A198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A5B988198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.m */; };
 		42A5B98C198C692300C3BCC1 /* Main-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A5B98B198C692300C3BCC1 /* Main-iPhone.storyboard */; };
+		42B3B3BC19900A87009CFBB5 /* CHCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B3B3BB19900A87009CFBB5 /* CHCustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		42A5B987198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDropDownTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		42A5B988198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDropDownTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		42A5B98B198C692300C3BCC1 /* Main-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPhone.storyboard"; sourceTree = "<group>"; };
+		42B3B3BA19900A87009CFBB5 /* CHCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCustomTableViewCell.h; sourceTree = "<group>"; };
+		42B3B3BB19900A87009CFBB5 /* CHCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				42A5B98B198C692300C3BCC1 /* Main-iPhone.storyboard */,
 				42A5B981198C584E00C3BCC1 /* CHViewController.h */,
 				42A5B982198C584E00C3BCC1 /* CHViewController.m */,
+				42B3B3BA19900A87009CFBB5 /* CHCustomTableViewCell.h */,
+				42B3B3BB19900A87009CFBB5 /* CHCustomTableViewCell.m */,
 				42A5B964198C568900C3BCC1 /* Images.xcassets */,
 				42A5B959198C568900C3BCC1 /* Supporting Files */,
 			);
@@ -273,6 +278,7 @@
 				42A5B989198C58AF00C3BCC1 /* CHDropDownTextField.m in Sources */,
 				42A5B98A198C58AF00C3BCC1 /* CHDropDownTextFieldTableViewCell.m in Sources */,
 				42A5B983198C584E00C3BCC1 /* CHViewController.m in Sources */,
+				42B3B3BC19900A87009CFBB5 /* CHCustomTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
