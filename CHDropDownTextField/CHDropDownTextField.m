@@ -25,7 +25,6 @@
 #import "CHDropDownTextField.h"
 #import "CHDropDownTextFieldTableViewCell.h"
 
-static NSString * const CHDropDownTextFieldTableViewCellIdentifier = @"CHTextFieldDropDownTableViewCellIdentifier";
 static CGFloat const CHDropDownTextFieldTableViewCellHeight = 44.0;
 static CGFloat const CHDropDownTableViewSidePadding = 0;
 
@@ -89,6 +88,8 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
     
     if (_cellClass != cellClass) {
         _cellClass = cellClass;
+        
+        [self.dropDownTableView registerClass:_cellClass forCellReuseIdentifier:NSStringFromClass(_cellClass)];
         [self.dropDownTableView reloadData];
     }
 }
@@ -124,7 +125,7 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
     if (_dropDownTableView == nil) {
         _dropDownTableView = [[UITableView alloc] init];
         _dropDownTableView.translatesAutoresizingMaskIntoConstraints = NO;
-        [_dropDownTableView registerClass:self.cellClass forCellReuseIdentifier:CHDropDownTextFieldTableViewCellIdentifier];
+        [_dropDownTableView registerClass:self.cellClass forCellReuseIdentifier:NSStringFromClass(self.cellClass)];
         _dropDownTableView.dataSource = self;
         _dropDownTableView.delegate = self;
         [self layoutDropDownTableView];
@@ -212,7 +213,7 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CHDropDownTextFieldTableViewCellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.cellClass)];
     NSString *title = [self.dropDownTableTitlesArray objectAtIndex:indexPath.row];
     cell.textLabel.text = title;
     
