@@ -16,7 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8K-i1-zut" customClass="CHDropDownTextField">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEh-O3-vuW">
+                                <rect key="frame" x="50" y="81" width="220" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use custom cell" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rck-c9-WgI">
+                                        <rect key="frame" x="20" y="25" width="123" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TTh-Fu-OZo">
+                                        <rect key="frame" x="151" y="20" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="useCustomCellSwitchValueChanged:" destination="S00-iC-nuo" eventType="valueChanged" id="UCs-xu-C1v"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="SMi-YN-gMd"/>
+                                    <constraint firstAttribute="trailing" secondItem="TTh-Fu-OZo" secondAttribute="trailing" constant="20" id="eX9-jh-f4f"/>
+                                    <constraint firstAttribute="height" constant="71" id="k2e-SF-PgG"/>
+                                    <constraint firstAttribute="centerY" secondItem="TTh-Fu-OZo" secondAttribute="centerY" id="vuZ-5P-yC1"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8K-i1-zut" customClass="CHDropDownTextField">
                                 <rect key="frame" x="20" y="44" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -28,9 +55,17 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="p8K-i1-zut" secondAttribute="trailing" constant="20" id="AJt-FO-ADr"/>
+                            <constraint firstItem="p8K-i1-zut" firstAttribute="top" secondItem="l5x-jn-dnS" secondAttribute="bottom" constant="24" id="O1j-2T-pH9"/>
+                            <constraint firstItem="p8K-i1-zut" firstAttribute="leading" secondItem="UUh-ay-5RH" secondAttribute="leading" constant="20" id="R7d-T7-lOv"/>
+                            <constraint firstAttribute="centerX" secondItem="rEh-O3-vuW" secondAttribute="centerX" id="gAu-hT-aPX"/>
+                            <constraint firstItem="rEh-O3-vuW" firstAttribute="top" secondItem="p8K-i1-zut" secondAttribute="bottom" constant="7" id="pHl-7m-NYK"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="dropDownTextField" destination="p8K-i1-zut" id="39U-4Q-dsW"/>
+                        <outlet property="useCustomCellSwitch" destination="TTh-Fu-OZo" id="nM1-Wp-eRy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRl-Ch-A0F" userLabel="First Responder" sceneMemberID="firstResponder"/>

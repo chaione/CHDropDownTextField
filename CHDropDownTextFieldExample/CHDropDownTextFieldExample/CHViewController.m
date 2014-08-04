@@ -24,10 +24,13 @@
 
 #import "CHViewController.h"
 #import "CHDropDownTextField.h"
+#import "CHCustomTableViewCell.h"
+#import "CHDropDownTextFieldTableViewCell.h"
 
 @interface CHViewController () <CHDropDownTextFieldDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) IBOutlet CHDropDownTextField *dropDownTextField;
+@property (nonatomic, weak) IBOutlet UISwitch *useCustomCellSwitch;
 @property (nonatomic, strong) NSArray *titlesArray;
 @property (nonatomic, strong) NSMutableArray *filteredTitlesArray;
 
@@ -61,6 +64,8 @@
 
 - (void)setupStyling {
     
+    self.dropDownTextField.cellClass = [CHCustomTableViewCell class];
+    self.dropDownTextField.dropDownTableView.backgroundColor = [UIColor whiteColor];
     self.dropDownTextField.dropDownTableView.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.dropDownTextField.dropDownTableView.layer.shadowOpacity = 0.45f;
     self.dropDownTextField.dropDownTableView.layer.shadowOffset = CGSizeMake(0, 3.0f);
@@ -72,6 +77,15 @@
 - (void)viewWasTapped:(UITapGestureRecognizer *)sender {
     
     [self.view endEditing:YES];
+}
+
+- (IBAction)useCustomCellSwitchValueChanged:(UISwitch *)sender {
+    
+    if (self.dropDownTextField.cellClass == [CHCustomTableViewCell class]) {
+        self.dropDownTextField.cellClass = [CHDropDownTextFieldTableViewCell class];
+    } else {
+        self.dropDownTextField.cellClass = [CHCustomTableViewCell class];
+    }
 }
 
 #pragma mark - UIGestureRecognizerDelegate
