@@ -21,7 +21,22 @@ _**Important:**_ If your project doesn't use ARC you must add the `-fobjc-arc` c
 
 ## Usage
 
-**Coming soon.**
+1. Instantiate manually or through a storyboard/xib.
+2. Set the number of visible rows for the drop-down to display at a time:
+
+`self.dropDownTextField.dropDownTableVisibleRowCount = 4;`
+
+3. Set an array of strings for the drop-down to display:
+
+`self.dropDownTextField.dropDownTableTitlesArray = self.stringsArray;`
+
+4. Set yourself up as the drop-down delegate through `dropDownDelegate`. Note that this delegate is separate from the regular `UITextField`'s delegate.
+5. Implement `dropDownTextField:didChooseDropDownOptionAtIndex:`.
+
+#### Optional
+
+**Subtitles**
+
 
 ## Contributing
 
