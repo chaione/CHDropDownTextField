@@ -8,7 +8,8 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/chaione/CHDropDownTextField"
   s.screenshots  = "https://github.com/chaione/CHDropDownTextField/raw/master/Misc/animation01.gif"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.authors            = { "Rogelio Gudino" => "cananito@gmail.com", "Matthew Morey" => "me@matthewmorey.com", "Osama Ashawa" => "osama@oashawa.com" }
+  s.authors      = { "Rogelio Gudino" => "cananito@gmail.com", "Matthew Morey" => "me@matthewmorey.com", "Osama Ashawa" => "osama@oashawa.com" }
+  s.social_media_url = 'https://twitter.com/cananito'
   s.platform     = :ios
   s.source       = { :git => "https://github.com/chaione/CHDropDownTextField.git", :tag => "1.0.0" }
   s.source_files = "CHDropDownTextField/*.{h,m}"
