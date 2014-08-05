@@ -3,6 +3,9 @@
 
 A custom text field with drop-down support.
 
+[![Version](https://cocoapod-badges.herokuapp.com/v/CHDropDownTextField/badge.png)](http://cocoadocs.org/docsets/CHDropDownTextField)
+[![Platform](https://cocoapod-badges.herokuapp.com/p/CHDropDownTextField/badge.png)](http://cocoadocs.org/docsets/CHDropDownTextField)
+
 <img src="https://github.com/chaione/CHDropDownTextField/raw/master/Misc/animation01.gif" width=320>
 
 ## Installation
