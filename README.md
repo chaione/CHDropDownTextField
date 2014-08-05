@@ -35,8 +35,35 @@ _**Important:**_ If your project doesn't use ARC you must add the `-fobjc-arc` c
 
 #### Optional
 
+**Custom Cells**
+
+The default cell is not flexible at all. If you wish to customize the style of the cells you need to create a custom cell subclass and set the `cellClass`:
+
+```
+self.dropDownTextField.cellClass = [MyCustomTableViewCell class];
+```
+
+*Warning:* The text field will still use the native `textLabel` and `detailTextLabel`.
+
 **Subtitles**
 
+The default drop-down cells support subtitles by default (using `UITableViewCellStyleValue1` style). To show subtitles you just need to set the `dropDownTableSubtitlesArray` property to an array of strings with the same amount of strings as the `dropDownTableTitlesArray`, otherwise the subtitles won't show.
+
+If you choose to use a custom cell, your custom cell subclass should override `initWithStyle:reuseIdentifier:` and call super by enforcing a style. For example;
+
+```
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    return [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+}
+```
+
+**Styling**
+
+Feel free to customize the text field's `dropDownTableView` as you wish with a few exceptions:
+
+* Do not take over data source or delegation.
+* Do not remove the tableview from the view hierarchy.
+* Do not modify the tableview's positioning and size.
 
 ## Contributing
 
