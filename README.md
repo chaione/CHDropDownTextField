@@ -3,7 +3,7 @@
 
 A custom text field with drop-down support.
 
-![CHDropDownTextField](https://github.com/chaione/CHDropDownTextField/raw/master/Misc/screenshot01.png)
+![CHDropDownTextField](https://github.com/chaione/CHDropDownTextField/raw/master/Misc/animation01.png)
 
 ## Installation
 

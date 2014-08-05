@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
                    A custom text field with drop-down support. Mainly useful for auto-complete suggestions.
                    DESC
   s.homepage     = "https://github.com/chaione/CHDropDownTextField"
-  s.screenshots  = "https://github.com/chaione/CHDropDownTextField/raw/master/Misc/screenshot01.png"
+  s.screenshots  = "https://github.com/chaione/CHDropDownTextField/raw/master/Misc/animation01.png"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.authors            = { "Rogelio Gudino" => "cananito@gmail.com", "Matthew Morey" => "me@matthewmorey.com", "Osama Ashawa" => "osama@oashawa.com" }
   s.platform     = :ios
