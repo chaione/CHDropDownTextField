@@ -66,11 +66,9 @@
     
     self.dropDownTextField.cellClass = [CHCustomTableViewCell class];
     self.dropDownTextField.dropDownTableView.backgroundColor = [UIColor whiteColor];
-    self.dropDownTextField.dropDownTableView.layer.masksToBounds = NO;
-    self.dropDownTextField.dropDownTableView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.dropDownTextField.dropDownTableView.layer.shadowOpacity = 0.45f;
-    self.dropDownTextField.dropDownTableView.layer.shadowOffset = CGSizeMake(0, 3.0f);
-    self.dropDownTextField.dropDownTableView.layer.shadowRadius = 2.0f;
+    self.dropDownTextField.dropDownTableView.layer.masksToBounds = YES;
+    self.dropDownTextField.dropDownTableView.layer.borderWidth = 1.0;
+    self.dropDownTextField.dropDownTableView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
 
 #pragma mark - Action Methods
