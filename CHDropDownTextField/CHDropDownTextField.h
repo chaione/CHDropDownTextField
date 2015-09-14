@@ -63,6 +63,16 @@
 @property (nonatomic, assign) BOOL canPaste;
 
 /**
+ Indicates the textfields text inset by Y. Defaults to 0.
+ */
+@property (nonatomic, assign) CGFloat dY;
+
+/**
+ Indicates the textfields text inset by X. Defaults to 0.
+ */
+@property (nonatomic, assign) CGFloat dX;
+
+/**
  Indicates the drop-down's number of visible rows at a time. Defaults to 0.
  */
 @property (nonatomic, assign) NSInteger dropDownTableVisibleRowCount;
