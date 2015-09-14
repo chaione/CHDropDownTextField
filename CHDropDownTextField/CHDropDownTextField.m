@@ -204,6 +204,16 @@ static CGFloat const CHDropDownTableViewSidePadding = 0;
     return [super canPerformAction:action withSender:sender];
 }
 
+// placeholder position
+- (CGRect)textRectForBounds:(CGRect)bounds {
+    return CGRectInset(bounds, _dX, _dY);
+}
+
+// text position
+- (CGRect)editingRectForBounds:(CGRect)bounds {
+    return CGRectInset(bounds, _dX, _dY);
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
